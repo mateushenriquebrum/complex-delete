@@ -1,4 +1,5 @@
 sudo: required
+language: generic
 services:
   - docker
 before_install:
@@ -11,3 +12,4 @@ before_install:
   - gcloud config set project mult-k8s-307010
   - gcloud config set compute/zone europe-west1-b
   - gcloud container clusters get-credentials multi-cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_USERNAME" --password-stdin
