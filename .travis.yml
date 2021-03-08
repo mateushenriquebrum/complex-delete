@@ -7,3 +7,6 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components updte kubectl
   - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud config set project mult-k8s-307010
+  - gcloud config set compute/zone europe-west1-b
+  - gcloud container clusters get-credentials multi-cluster
